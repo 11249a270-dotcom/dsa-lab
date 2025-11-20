@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#define SIZE 10  // Size of hash table
+
+int hashTable[SIZE];
+
+// Initialize hash table
+void initialize() {
+    for(int i = 0; i < SIZE; i++)
+        hashTable[i] = -1;
+}
+
+// Hash function: simple division method
+int hashFunction(int key) {
+    return key % SIZE;
+}
+
+// Insert key using linear probing
+void insert(int key) {
+    int index = hashFunction(key);
